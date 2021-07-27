@@ -2,8 +2,6 @@
 
 This demonstration is intended to show off the CI/CD possibilities of Kubernetes; specifically Review Apps. Review Apps are 'per branch' deployments which are then accessible via their own URL. They are useful as they allow a developer to show their work at any stage to anyone who might be interested. 
 
-As a CI/CD system I chose Codefresh. Mainly because its what I'm playing with at the moment but it does have some cool Kubernetes specific features such as Helm support and the ability to deploy templated YAML without any need for external tooling such as bash. 
-
 # App
 
 The application is a Hello world application with a little extra. If the environment variables `BRANCH` or `THIS_SERVICE` are present in the environment they will be returned when the application are called. This 'branch awareness' can be very useful when orchestrating a fleet of microservices for example.

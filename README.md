@@ -12,21 +12,10 @@ The application is a Hello world application with a little extra. If the environ
 
 Review Apps are created by the CI/CD when new branches are pushed to Github. Review Apps are deployed into their own namespaces which allows easy cleanup with `kubectl delete namespace {{ namespace }}`. This cleanup process is not implemented in this demo but would be fairly trivial to achieve by various methods.
 
-Two pull requests have already been created in homage to 1960's rock bands:
-
-[Jethro Tull](https://github.com/mooperd/equal-experts/pull/3)
-
-[Led Zeppelin](https://github.com/mooperd/equal-experts/pull/4)
-
-The Review Apps for these PRs can be inspected as described in the section above.
-
-'Staging', or at least a deployment of the master branch can be found here:
-
-[http://master.equal-experts.otternetwork.info](http://master.equal-experts.otternetwork.info)
 
 # Kubernetes
 
-Currently, this application is deployed to a Google Cloud GKE cluster. The standard NGINX ingress controller is being used. A wildcard DNS record for `otternetworks.info` is pointing to the ingress controller TCP loadbalancer meaning that no DNS changes are required for spinning up new Review Apps.
+The standard NGINX ingress controller is being used. A wildcard DNS record for the staging domain is pointing to the ingress controller TCP loadbalancer meaning that no DNS changes are required for spinning up new Review Apps.
 
 Currently there is no provision for a production deploy but one could easily be added. My preferred method would be an simple extra step which is activated by a git tag.
 
